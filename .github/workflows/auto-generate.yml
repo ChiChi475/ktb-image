@@ -1,4 +1,4 @@
-name: KTB Image Generator
+name: KTBCHI Image Generator
 
 on:
   # Xóa bỏ repository_dispatch, chỉ giữ lại workflow_dispatch
