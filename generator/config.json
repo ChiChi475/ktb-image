@@ -1,6 +1,6 @@
 {
     "settings": {
-        "max_urls_per_domain": 100,
+        "max_urls_per_domain": 50,
         "history_to_keep": 10,
         "processed_log_file": "processed_urls.json"
     },
