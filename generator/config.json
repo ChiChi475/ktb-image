@@ -1,0 +1,119 @@
+{
+    "defaults": {
+        "title_clean_keywords": [
+            "Orament-Christmas-den",
+            "Ornament-X-Mas-2024",
+            "Ornament-poster-black",
+            "T-shirts-shirt",
+            "t-shirt-white",
+            "t-shirt-black",
+            "Posters-black",
+            "Posters-white",
+            "black-poster",
+            "white-poster",
+            "ladies-tee",
+            "sweatshirt",
+            "t-shirts",
+            "t-shirt",
+            "tshirt",
+            "sweater",
+            "hoodie",
+            "Official",
+            "ornament",
+            "poster",
+            "shirt"
+        ]
+    },
+    "mockup_sets": {
+        "printiment": {
+            "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white.webp",
+            "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_black.webp",
+            "coords": { "x": 444, "y": 331, "w": 370, "h": 527 },
+            "watermark_text": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/CH1.png",
+            "title_prefix_to_add": "Premium",
+            "title_suffix_to_add": "T Shirts"
+        },
+        "whatwillwear": {
+            "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white_2.webp",
+            "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_black_2.webp",
+            "coords": { "x": 424, "y": 362, "w": 384, "h": 516 },
+            "watermark_text": "[Whatwillwear]",
+            "title_prefix_to_add": "Official",
+            "title_suffix_to_add": "Shirts"
+        },
+        "ktbtee": {
+            "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white_4.webp",
+            "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_black_4.webp",
+            "coords": { "x": 348, "y": 263, "w": 463, "h": 595 },
+            "watermark_text": "[KTB]",
+            "title_prefix_to_add": "Premium",
+            "title_suffix_to_add": "Tee Shirt"
+        },
+        "albumcoverprint": {
+            "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white_5.webp",
+            "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_black_5.webp",
+            "coords": { "x": 310, "y": 201, "w": 406, "h": 535 },
+            "watermark_text": "[ACP]",
+            "title_prefix_to_add": "Official",
+            "title_suffix_to_add": "T Shirt Sweater"
+        }
+    },
+    "domains": {
+        "teeworksusa.com": [
+            {
+                "pattern": "-Posters-black.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 148, "y": 54, "w": 341, "h": 460 }
+            },
+            {
+                "pattern": "-Posters-white.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 163, "y": 29, "w": 281, "h": 386 }
+            },
+            {
+                "pattern": "-white-poster.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 409, "y": 206, "w": 970, "h": 1384 }
+            },
+            {
+                "pattern": "-poster.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 399, "y": 180, "w": 980, "h": 1405 }
+            }
+        ]
+        "teleteeshirt.com": [
+            {
+                "pattern": "-shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 250, "y": 176, "w": 314, "h": 422 }
+            }
+        ],
+        "teespix.com": [
+            {
+                "pattern": "-Shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 248, "y": 183, "w": 426, "h": 498 }
+            }
+        ],
+        "serenashirt.com": [
+            {
+                "pattern": "-sweater.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 192, "y": 182, "w": 423, "h": 508 }
+            },
+            {
+                "pattern": "-ornament-Ornament.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 266, "y": 363, "w": 454, "h": 498 }
+            }
+        ]
+    }
+}
