@@ -35,8 +35,8 @@
             "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_black.webp",
             "coords": { "x": 444, "y": 331, "w": 370, "h": 527 },
             "watermark_text": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/CH1.png",
-            "title_prefix_to_add": "Premium",
-            "title_suffix_to_add": "T Shirts"
+            "title_prefix_to_add": "",
+            "title_suffix_to_add": "T Shirt, Shirt"
         },
         "whatwillwear": {
             "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white_2.webp",
