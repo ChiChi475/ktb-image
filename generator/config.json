@@ -111,7 +111,7 @@
                 "pattern": "-sweater.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["printiment"],
-                "coords": { "x": 192, "y": 182, "w": 423, "h": 508 }
+                "coords": { "x": 144, "y": 173, "w": 428, "h": 525 }
             },
             {
                 "pattern": "-ornament-Ornament.jpg",
