@@ -337,10 +337,12 @@ def main():
                     prefix = mockup_data.get("title_prefix_to_add", "")
                     suffix = mockup_data.get("title_suffix_to_add", "")
                     final_filename = f"{prefix} {cleaned_title} {suffix}".replace('  ', ' ').strip() + '.webp'
+                    #final_filename = f"{prefix} {cleaned_title} {suffix}".replace('  ', ' ').strip() + '.jpg'
                     
                     img_byte_arr = BytesIO()
                     #final_mockup_rgb = final_mockup.convert('RGB')
-                    final_mockup_rgb.save(img_byte_arr, format="WEBP", quality=90)
+                    #final_mockup_rgb.save(img_byte_arr, format="JPEG", quality=90)
+                    final_mockup.save(img_byte_arr, format="WEBP", quality=90)
                     
                     if mockup_name not in images_for_zip:
                         images_for_zip[mockup_name] = []
