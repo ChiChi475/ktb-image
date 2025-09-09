@@ -248,14 +248,14 @@ def main():
             print(f"Lỗi: Không thể tải file URL cho domain {domain}. Bỏ qua. {e}")
             continue
 
-        # Tìm URL dừng từ lần chạy trước
+        # Lấy lịch sử và chuyển thành Set để tìm kiếm hiệu quả
         last_processed_urls = processed_log.get(domain, [])
-        stop_url = last_processed_urls[0] if last_processed_urls else None
+        stop_urls_set = set(last_processed_urls)
         
         urls_to_process = []
         for i, url in enumerate(all_urls):
-            if url == stop_url:
-                print(f"Đã tìm thấy URL dừng của lần chạy trước: {url}")
+            if url in stop_urls_set:
+                print(f"Đã tìm thấy URL dừng trong lịch sử: {url}")
                 break
             if i >= max_urls_per_domain:
                 print(f"Đã đạt giới hạn {max_urls_per_domain} URL cho domain này.")
@@ -268,10 +268,7 @@ def main():
             
         print(f"Tìm thấy {len(urls_to_process)} URL mới để xử lý cho {domain}.")
         
-        # Chuẩn bị mockup cache
         mockup_cache = {}
-        # ... (Phần code cache mockup có thể giữ nguyên hoặc tối ưu hơn nếu muốn) ...
-        
         processed_count = 0
         skipped_count = 0
         successfully_processed_this_run = []
@@ -285,8 +282,6 @@ def main():
                 skipped_count += 1
                 continue
 
-            # ... (Phần code xử lý ảnh, tạo mockup, v.v... giữ nguyên) ...
-            # Đoạn code dưới đây gần như không đổi, chỉ thêm logic ghi lại url thành công
             try:
                 img = download_image(url)
                 if not img:
@@ -294,6 +289,11 @@ def main():
                     continue
 
                 crop_coords = matched_rule.get("coords")
+                if not crop_coords:
+                    print(f"Không có tọa độ crop trong rule cho file {filename}. Bỏ qua.")
+                    skipped_count += 1
+                    continue
+
                 pixel = img.getpixel((crop_coords['x'], crop_coords['y']))
                 avg_brightness = sum(pixel[:3]) / 3
                 is_white = avg_brightness > 128
@@ -320,7 +320,9 @@ def main():
                             }
                         else: continue
 
-                    mockup_data = mockup_cache[mockup_name]
+                    mockup_data = mockup_cache.get(mockup_name)
+                    if not mockup_data: continue
+                    
                     mockup_to_use = mockup_data["white"] if is_white else mockup_data["black"]
 
                     if not mockup_to_use: continue
@@ -343,7 +345,6 @@ def main():
                         images_for_zip[mockup_name] = []
                     images_for_zip[mockup_name].append((final_filename, img_byte_arr.getvalue()))
                 
-                # Ghi nhận URL đã xử lý thành công
                 successfully_processed_this_run.append(url)
                 processed_count += 1
 
@@ -356,7 +357,6 @@ def main():
         # 7. Cập nhật log cho domain hiện tại
         if successfully_processed_this_run:
             previous_urls_for_domain = processed_log.get(domain, [])
-            # Kết hợp các URL mới xử lý và các URL cũ, sau đó cắt lấy số lượng cần giữ
             updated_urls = successfully_processed_this_run + previous_urls_for_domain
             processed_log[domain] = updated_urls[:history_to_keep]
 
@@ -373,7 +373,7 @@ def main():
 
     # 9. Lưu lại toàn bộ lịch sử đã xử lý và ghi log tóm tắt
     save_processed_log(log_file_path, processed_log)
-    write_log(urls_summary) # Hàm write_log giữ nguyên
+    write_log(urls_summary)
     print("Kết thúc quy trình.")
 
 def write_log(urls_summary):
