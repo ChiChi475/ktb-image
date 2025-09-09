@@ -1,4 +1,9 @@
 {
+    "settings": {
+        "max_urls_per_domain": 100,
+        "history_to_keep": 10,
+        "processed_log_file": "processed_urls.json"
+    },
     "defaults": {
         "title_clean_keywords": [
             "Orament-Christmas-den",
