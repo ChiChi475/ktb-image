@@ -340,7 +340,7 @@ def main():
                     
                     img_byte_arr = BytesIO()
                     final_mockup_rgb = final_mockup.convert('RGB')
-                    final_mockup.save(img_byte_arr, format="JPEG", quality=90)
+                    final_mockup_rgb.save(img_byte_arr, format="JPEG", quality=90)
                     
                     if mockup_name not in images_for_zip:
                         images_for_zip[mockup_name] = []
