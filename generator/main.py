@@ -339,6 +339,7 @@ def main():
                     final_filename = f"{prefix} {cleaned_title} {suffix}".replace('  ', ' ').strip() + '.jpg'
                     
                     img_byte_arr = BytesIO()
+                    final_mockup_rgb = final_mockup.convert('RGB')
                     final_mockup.save(img_byte_arr, format="JPEG", quality=90)
                     
                     if mockup_name not in images_for_zip:
