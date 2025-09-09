@@ -113,6 +113,51 @@
                 "mockup_sets_to_use": ["printiment"],
                 "coords": { "x": 266, "y": 363, "w": 454, "h": 498 }
             }
+        ],
+        "clickoneshirt.com": [
+            {
+                "pattern": "-t-shirt-white.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["albumcoverprint", "ktbtee"],
+                "coords": { "x": 321, "y": 271, "w": 374, "h": 498 }
+            },
+            {
+                "pattern": "-t-shirt-black.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["ktbtee"],
+                "coords": { "x": 271, "y": 243, "w": 500, "h": 555 }
+            }
+        ],
+        "teeslocal.com": [
+            {
+                "pattern": "-shirt.jpg",
+                "action": "skip"
+            },
+            {
+                "pattern": "-hoodie.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["whatwillwear"],
+                "coords": { "x": 343, "y": 415, "w": 334, "h": 363 },
+                "skipBlack": true
+            }
+        ],
+        "teeextra.com": [
+            {
+                "pattern": "-Two-Side-Shirt.jpg",
+                "action": "skip"
+            },
+            {
+                "pattern": "-Ornament.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["ktbtee", "albumcoverprint"],
+                "coords": { "x": 207, "y": 210, "w": 358, "h": 338 }
+            },
+            {
+                "pattern": "-Shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["whatwillwear", "ktbtee"],
+                "coords": { "x": 264, "y": 215, "w": 479, "h": 594 }
+            }
         ]
     }
 }
