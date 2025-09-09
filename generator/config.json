@@ -89,7 +89,7 @@
                 "mockup_sets_to_use": ["printiment"],
                 "coords": { "x": 399, "y": 180, "w": 980, "h": 1405 }
             }
-        ]
+        ],
         "teleteeshirt.com": [
             {
                 "pattern": "-shirt.jpg",
