@@ -108,12 +108,6 @@
         ],
         "serenashirt.com": [
             {
-                "pattern": "-sweater.jpg",
-                "action": "generate",
-                "mockup_sets_to_use": ["printiment"],
-                "coords": { "x": 211, "y": 202, "w": 323, "h": 446 }
-            },
-            {
                 "pattern": "-ornament-Ornament.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["printiment"],
