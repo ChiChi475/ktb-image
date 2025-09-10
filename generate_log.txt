@@ -1,10 +1,15 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-10 17:55:14
+Timestamp: 2025-09-10 21:49:15
 
 Domain: teeworksusa.com
-  Processed Images: 28
+  Processed Images: 53
+  Skipped Images: 6
+  Total URLs Found: 59
+
+Domain: teespix.com
+  Processed Images: 100
   Skipped Images: 0
-  Total URLs Found: 28
+  Total URLs Found: 100
 
 Domain: serenashirt.com
   Processed Images: 0
@@ -13,21 +18,11 @@ Domain: serenashirt.com
 
 Domain: teeslocal.com
   Processed Images: 0
-  Skipped Images: 30
-  Total URLs Found: 30
-
-Domain: dalatshirt.com
-  Processed Images: 100
-  Skipped Images: 0
-  Total URLs Found: 100
+  Skipped Images: 38
+  Total URLs Found: 38
 
 Domain: lovingsquad.com
-  Processed Images: 100
-  Skipped Images: 0
-  Total URLs Found: 100
-
-Domain: meredpremium.com
-  Processed Images: 93
-  Skipped Images: 7
+  Processed Images: 15
+  Skipped Images: 85
   Total URLs Found: 100
 
