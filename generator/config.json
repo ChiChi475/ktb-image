@@ -159,6 +159,37 @@
                 "mockup_sets_to_use": ["printiment"],
                 "coords": { "x": 264, "y": 215, "w": 479, "h": 594 }
             }
+        ],
+        "dalatshirt.com": [
+            {
+                "pattern": "-T-shirts-Shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 405, "y": 150, "w": 311, "h": 401 }
+            },
+            {
+                "pattern": "-Shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 405, "y": 150, "w": 311, "h": 401 }
+            }
+        ],
+        "lovingsquad.com": [
+            {
+                "pattern": "-T-shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 313, "y": 152, "w": 429, "h": 449 }
+            }
+        ],
+        "meredpremium.com": [
+            {
+                "pattern": "-Shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["printiment"],
+                "coords": { "x": 234, "y": 206, "w": 485, "h": 497 },
+                "skipWhite": true
+            }
         ]
     }
 }
