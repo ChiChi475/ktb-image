@@ -1,18 +1,28 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-10 12:10:10
+Timestamp: 2025-09-10 17:33:56
 
-Domain: teespix.com
-  Processed Images: 43
+Domain: teeworksusa.com
+  Processed Images: 86
   Skipped Images: 0
-  Total URLs Found: 43
+  Total URLs Found: 86
+
+Domain: teleteeshirt.com
+  Processed Images: 100
+  Skipped Images: 0
+  Total URLs Found: 100
 
 Domain: serenashirt.com
   Processed Images: 0
   Skipped Images: 100
   Total URLs Found: 100
 
-Domain: clickoneshirt.com
-  Processed Images: 61
+Domain: teeslocal.com
+  Processed Images: 0
+  Skipped Images: 30
+  Total URLs Found: 30
+
+Domain: teeextra.com
+  Processed Images: 7
   Skipped Images: 0
-  Total URLs Found: 61
+  Total URLs Found: 7
 
