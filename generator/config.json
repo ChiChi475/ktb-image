@@ -131,15 +131,10 @@
         ],
         "teeslocal.com": [
             {
-                "pattern": "-shirt.jpg",
-                "action": "skip"
-            },
-            {
-                "pattern": "-hoodie.jpg",
+                "pattern": "-classic-mens.jpeg",
                 "action": "generate",
                 "mockup_sets_to_use": ["printiment"],
-                "coords": { "x": 343, "y": 415, "w": 334, "h": 363 },
-                "skipBlack": true
+                "coords": { "x": 278, "y": 270, "w": 346, "h": 443 }
             }
         ],
         "teeextra.com": [
