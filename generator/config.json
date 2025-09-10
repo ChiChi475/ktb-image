@@ -42,7 +42,7 @@
         "whatwillwear": {
             "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white_2.webp",
             "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_black_2.webp",
-            "coords": { "x": 424, "y": 362, "w": 384, "h": 516 },
+            "coords": { "x": 352, "y": 308, "w": 448, "h": 623 },
             "watermark_text": "[Whatwillwear]",
             "title_prefix_to_add": "Official",
             "title_suffix_to_add": "Shirts"
