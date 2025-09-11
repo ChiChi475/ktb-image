@@ -73,50 +73,81 @@ def clean_title(title, keywords):
 
 def process_image(design_img, mockup_img, mockup_config, user_config):
     """Cắt, trim và dán design vào mockup."""
-    # 1. Xóa nền bằng thuật toán "magic wand"
-    design_w, design_h = design_img.size
-    seed_color = design_img.getpixel((0, 0))
-    seed_r, seed_g, seed_b = seed_color[:3]
-    pixels = design_img.load()
-    stack = [(0, 0)]
-    visited = set()
     
-    while stack:
-        x, y = stack.pop()
-        if (x, y) in visited or not (0 <= x < design_w and 0 <= y < design_h):
-            continue
-        visited.add((x, y))
-        
-        current_pixel = pixels[x, y]
-        current_r, current_g, current_b = current_pixel[:3]
-        
-        if abs(current_r - seed_r) < 30 and abs(current_g - seed_g) < 30 and abs(current_b - seed_b) < 30:
-            pixels[x, y] = (0, 0, 0, 0)
-            stack.extend([(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)])
+    # --- LOGIC XÓA NỀN "MAGIC WAND" 4 GÓC ---
+    design_w, design_h = design_img.size
+    pixels = design_img.load()
+    visited = set() # Dùng chung cho tất cả các lần flood fill
 
-    # 2. Cắt lại ảnh sau khi xóa nền
+    # 1. Xác định 4 điểm góc để bắt đầu
+    corner_points = [
+        (0, 0),                  # Góc trên-trái
+        (design_w - 1, 0),       # Góc trên-phải
+        (0, design_h - 1),       # Góc dưới-trái
+        (design_w - 1, design_h - 1) # Góc dưới-phải
+    ]
+
+    # 2. Lặp qua từng góc và chạy một "magic wand" độc lập
+    for start_x, start_y in corner_points:
+        # Nếu điểm này đã được xử lý trong một lần loang màu trước đó thì bỏ qua
+        if (start_x, start_y) in visited:
+            continue
+
+        # Lấy màu tham chiếu TẠI CHÍNH GÓC ĐÓ
+        seed_color = design_img.getpixel((start_x, start_y))
+        seed_r, seed_g, seed_b = seed_color[:3]
+        
+        # Bắt đầu quy trình loang màu mới từ góc này
+        stack = [(start_x, start_y)]
+        
+        while stack:
+            x, y = stack.pop()
+            
+            if (x, y) in visited or not (0 <= x < design_w and 0 <= y < design_h):
+                continue
+            
+            # Đánh dấu pixel này đã được ghé thăm
+            visited.add((x, y))
+            
+            current_pixel = pixels[x, y]
+            current_r, current_g, current_b = current_pixel[:3]
+            
+            # So sánh màu hiện tại với màu tham chiếu của GÓC NÀY
+            if abs(current_r - seed_r) < 30 and abs(current_g - seed_g) < 30 and abs(current_b - seed_b) < 30:
+                pixels[x, y] = (0, 0, 0, 0) # Chuyển thành trong suốt
+                
+                # Thêm các điểm lân cận vào stack để xử lý tiếp
+                stack.append((x + 1, y))
+                stack.append((x - 1, y))
+                stack.append((x, y + 1))
+                stack.append((x, y - 1))
+
+    # --- KẾT THÚC LOGIC XÓA NỀN NÂNG CẤP ---
+            
     trimmed_design = get_trimmed_image_with_padding(design_img)
     if not trimmed_design:
         return None
-
-    # 3. Dán design vào mockup
+    
+    # Các bước còn lại giữ nguyên...
     mockup_w, mockup_h = mockup_config['w'], mockup_config['h']
     design_w, design_h = trimmed_design.size
+    
     scale = min(mockup_w / design_w, mockup_h / design_h)
-    final_w, final_h = int(design_w * scale), int(design_h * scale)
+    
+    final_w = int(design_w * scale)
+    final_h = int(design_h * scale)
+    
     resized_design = trimmed_design.resize((final_w, final_h), Image.Resampling.LANCZOS)
     
     final_x = mockup_config['x'] + (mockup_w - final_w) // 2
     final_y = mockup_config['y'] + 20
-    
+
     final_mockup = mockup_img.copy()
     final_mockup.paste(resized_design, (final_x, final_y), resized_design)
     
-    # 4. Thêm chữ ký
     watermark_content = user_config.get("watermark_text")
     if watermark_content:
         if watermark_content.startswith(('http://', 'https://')):
-            # Thêm chữ ký dạng ảnh
             watermark_img = download_image(watermark_content)
             if watermark_img:
                 max_wm_width = 280
@@ -131,7 +162,6 @@ def process_image(design_img, mockup_img, mockup_config, user_config):
                 paste_y = final_mockup.height - wm_h - 50
                 final_mockup.paste(watermark_img, (paste_x, paste_y), watermark_img)
         else:
-            # Thêm chữ ký dạng text
             draw = ImageDraw.Draw(final_mockup)
             try:
                 font_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "verdanab.ttf")
@@ -139,11 +169,12 @@ def process_image(design_img, mockup_img, mockup_config, user_config):
             except IOError:
                 font = ImageFont.load_default()
             text_bbox = draw.textbbox((0, 0), watermark_content, font=font)
-            text_w, text_h = text_bbox[2] - text_bbox[0], text_bbox[3] - text_bbox[1]
+            text_w = text_bbox[2] - text_bbox[0]
+            text_h = text_bbox[3] - text_bbox[1]
             text_x = final_mockup.width - text_w - 20
             text_y = final_mockup.height - text_h - 50
             draw.text((text_x, text_y), watermark_content, fill=(0, 0, 0, 128), font=font)
-            
+    
     return final_mockup
 
 def get_repo_size(path='.'):
