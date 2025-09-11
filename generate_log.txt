@@ -1,5 +1,5 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-11 11:49:00
+Timestamp: 2025-09-11 11:57:11
 
 Domain: serenashirt.com
   Processed Images: 0
@@ -7,14 +7,19 @@ Domain: serenashirt.com
   Total URLs Found: 100
 
 Domain: clickoneshirt.com
-  Processed Images: 94
+  Processed Images: 21
   Skipped Images: 0
-  Total URLs Found: 94
+  Total URLs Found: 21
 
 Domain: teeslocal.com
   Processed Images: 0
   Skipped Images: 30
   Total URLs Found: 30
+
+Domain: teeextra.com
+  Processed Images: 16
+  Skipped Images: 0
+  Total URLs Found: 16
 
 Domain: lovingsquad.com
   Processed Images: 0
