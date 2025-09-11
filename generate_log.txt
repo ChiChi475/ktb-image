@@ -1,10 +1,10 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-10 22:25:01
+Timestamp: 2025-09-11 07:19:58
 
 Domain: teleteeshirt.com
-  Processed Images: 99
-  Skipped Images: 1
-  Total URLs Found: 100
+  Processed Images: 30
+  Skipped Images: 0
+  Total URLs Found: 30
 
 Domain: serenashirt.com
   Processed Images: 0
@@ -16,8 +16,8 @@ Domain: teeslocal.com
   Skipped Images: 38
   Total URLs Found: 38
 
-Domain: teeextra.com
-  Processed Images: 8
+Domain: dalatshirt.com
+  Processed Images: 100
   Skipped Images: 0
-  Total URLs Found: 8
+  Total URLs Found: 100
 
