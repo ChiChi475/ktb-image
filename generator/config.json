@@ -1,6 +1,6 @@
 {
     "settings": {
-        "max_urls_per_domain": 100,
+        "max_urls_per_domain": 50,
         "history_to_keep": 10,
         "processed_log_file": "processed_urls.json"
     },
@@ -32,10 +32,10 @@
     },
     "mockup_sets": {
         "printiment": {
-            "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white.webp",
-            "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_black.webp",
+            "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/CH_white.jpg",
+            "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/CH_black.jpg",
             "coords": { "x": 444, "y": 331, "w": 370, "h": 527 },
-            "watermark_text": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/CH1.png",
+            "watermark_text": "",
             "title_prefix_to_add": "",
             "title_suffix_to_add": "T Shirt, Shirt"
         },
