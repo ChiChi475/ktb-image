@@ -251,6 +251,12 @@ def main():
     domains_configs = configs.get("domains", {})
     mockup_sets_config = configs.get("mockup_sets", {})
     title_clean_keywords = defaults.get("title_clean_keywords", [])
+    
+    # *** BẮT ĐẦU THAY ĐỔI ***
+    # Lấy danh sách từ khóa cấm toàn cục và chuẩn hóa chúng
+    global_skip_keywords = defaults.get("global_skip_keywords", [])
+    normalized_skip_keywords = [k.lower().replace('-', ' ') for k in global_skip_keywords]
+    # *** KẾT THÚC THAY ĐỔI ***
 
     # 3. Tải lịch sử đã xử lý
     processed_log = load_processed_log(log_file_path)
@@ -307,6 +313,16 @@ def main():
         # 6. Xử lý từng URL
         for url in urls_to_process:
             filename = os.path.basename(url)
+
+            # *** BẮT ĐẦU THAY ĐỔI ***
+            # Chuẩn hóa tên file và kiểm tra với danh sách cấm toàn cục
+            normalized_filename = filename.lower().replace('-', ' ')
+            if any(keyword in normalized_filename for keyword in normalized_skip_keywords):
+                print(f"Bỏ qua (global skip): {filename}")
+                skipped_count += 1
+                continue
+            # *** KẾT THÚC THAY ĐỔI ***
+
             matched_rule = next((rule for rule in domain_rules if rule["pattern"] in filename), None)
 
             if not matched_rule or matched_rule.get("action") == "skip":
