@@ -1,6 +1,6 @@
 {
     "settings": {
-        "max_urls_per_domain": 50,
+        "max_urls_per_domain": 100,
         "history_to_keep": 10,
         "processed_log_file": "processed_urls.json"
     },
@@ -9,6 +9,7 @@
             "Orament-Christmas-den",
             "Ornament-X-Mas-2024",
             "Ornament-poster-black",
+            "Mug-and-Ornament",
             "T-shirts-shirt",
             "t-shirt-white",
             "t-shirt-black",
@@ -16,7 +17,11 @@
             "Posters-white",
             "black-poster",
             "white-poster",
+            "poster-portrait",
+            "Poster-Canvas",
             "ladies-tee",
+            "t-shirt_classic",
+            "shirt_classic",
             "sweatshirt",
             "t-shirts",
             "t-shirt",
@@ -29,6 +34,12 @@
             "shirt",
             "Original",
             "Originals"
+        ],
+        "global_skip_keywords": [
+          "Two-Sided",
+          "2-Sided",
+          "sided",
+          "Sided"
         ]
     },
     "mockup_sets": {
