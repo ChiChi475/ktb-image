@@ -130,7 +130,8 @@
                 "pattern": "-sweater.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["printiment"],
-                "coords": { "x": 236, "y": 260, "w": 262, "h": 345 }
+                "coords": { "x": 219, "y": 233, "w": 283, "h": 364 },
+                "skipWhite": true
             }
         ],
         "clickoneshirt.com": [
