@@ -1,13 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 18:46:42
-
-Domain: teeworksusa.com
-  Processed Images: 50
-  Skipped Images: 0
-  Total URLs Found: 50
+Timestamp: 2025-09-14 20:01:35
 
 Domain: teleteeshirt.com
-  Processed Images: 1
+  Processed Images: 6
   Skipped Images: 0
-  Total URLs Found: 1
+  Total URLs Found: 6
+
+Domain: teespix.com
+  Processed Images: 87
+  Skipped Images: 0
+  Total URLs Found: 87
 
